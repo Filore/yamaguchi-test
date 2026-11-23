@@ -1,0 +1,33 @@
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    min-width: 100%;
+    min-height: 100px;
+    background-color: rgba(219, 219, 219, 1);
+    border-radius: 999px;
+    gap: 15px;
+    box-sizing: border-box;
+    padding-left: 14px;
+}
+
+@media (max-width: 1023px) {
+    .badge {
+        min-width: 0;
+        width: 100%;
+        min-height: clamp(90px, 31.25cqi, 140px);
+        padding: 2cqi 4.375cqi;
+        gap: 4.6875cqi;
+    }
+
+    .badge > img {
+        flex: 0 0 auto;
+        width: clamp(64px, 23.75cqi, 100px);
+        height: clamp(64px, 23.75cqi, 100px);
+        object-fit: contain;
+    }
+
+    .badge > :not(img) {
+        min-width: 0;
+    }
+}

@@ -1,0 +1,242 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+
+    align-items: center;
+    background-color: #746D68;
+    padding-bottom: 27px;
+}
+
+.slide-card {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'feature' 'title' 'weight' 'photo';
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+}
+
+.mobile-feature {
+    grid-area: feature;
+}
+
+.text-panel {
+    display: contents;
+}
+
+.desktop-hyphen {
+    display: none;
+}
+
+.badge-text {
+    font-family: 'Euclid Circular A';
+    font-weight: 600;
+    font-size: 21px;
+    color: rgba(98, 91, 86, 1);
+}
+
+.title {
+    grid-area: title;
+    justify-self: center;
+    color: #fff;
+    font-size: 38px;
+    margin-bottom: 0;
+    margin-top: 26px;
+}
+
+.badge {
+   grid-area: weight;
+   justify-self: center;
+   padding: 6px 19px;
+   box-shadow: 9.95px 8.38px 15.71px -3.14px rgba(65, 60, 57, 0.21);
+   margin-top: 20px;
+}
+
+.image-wrapper {
+    grid-area: photo;
+    position: relative;
+    width: 100%;
+}
+
+.image-wrapper picture {
+    display: block;
+}
+
+.image-wrapper img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.star-position {
+    position: relative;
+    grid-area: photo;
+    align-self: start;
+    justify-self: end;
+    margin-right: 6%;
+    width: 30%;
+    transform: translateY(-20%);
+    z-index: 1;
+}
+
+.badge-text {
+    font-family: 'Euclid Circular A';
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.description-wrapper {
+    position: relative;
+    grid-area: photo;
+    align-self: end;
+    margin-bottom: 10.6875%;
+    z-index: 1;
+}
+
+@media (max-width: 1023px) {
+    .container {
+        min-height: 0;
+        padding-bottom: 0;
+    }
+
+    .slide-card {
+        max-width: 480px;
+        container-type: inline-size;
+        grid-template-areas: 'feature' 'title' 'weight' 'photo' 'description';
+    }
+
+    .badge-text {
+        font-size: clamp(18px, 6.25cqi, 26px);
+        line-height: 1.15;
+    }
+
+    .title {
+        margin-top: 8.125cqi;
+        font-size: clamp(34px, 11.875cqi, 52px);
+    }
+
+    .badge {
+        margin-top: 6.25cqi;
+        padding: 1.875cqi 5.9375cqi;
+    }
+
+    .description-wrapper {
+        grid-area: description;
+        align-self: auto;
+        margin-top: -45cqi;
+        margin-bottom: 0;
+        padding-bottom: 19.125cqi;
+    }
+
+    .description {
+        width: calc(100% - 12.5cqi);
+        font-size: clamp(1rem, 5cqi, 1.125rem);
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        min-height: 100svh;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 48px 0;
+        background-color: rgba(127, 120, 117, 1);
+    }
+
+    .slide-card {
+        display: block;
+        width: min(65vw, 1200px, calc((100svh - 96px) * 976 / 630));
+        aspect-ratio: 976 / 630;
+        border-radius: 48px;
+        overflow: hidden;
+        container-type: inline-size;
+        background: radial-gradient(ellipse at 25% 35%, #d5c6b4 0%, #b9afa5 35%, #a59f9b 70%);
+    }
+
+    .mobile-feature {
+        display: none;
+    }
+
+    .image-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 13%;
+        width: 53%;
+    }
+
+    .star-position {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        width: 15%;
+        margin: 0;
+        transform: none;
+    }
+
+    .text-panel {
+        position: absolute;
+        top: 50%;
+        left: 67%;
+        right: 7%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3cqi;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 5cqi;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .desktop-hyphen {
+        display: inline;
+    }
+
+    .title-ending {
+        display: block;
+    }
+
+    .description-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 1.35cqi;
+        line-height: 1.5;
+    }
+
+    .badge {
+        margin: 0;
+        padding: 0.8cqi 2.3cqi;
+    }
+
+    .badge .badge-text {
+        font-size: 2.3cqi;
+        line-height: 1.1;
+    }
+}

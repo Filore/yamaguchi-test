@@ -1,0 +1,317 @@
+.container,
+.slide-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    align-items: center;
+    background-color: #746D68;
+}
+
+.desktop-composition {
+    display: none;
+}
+
+.desktop-lights {
+    display: none;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title {
+    padding-top: 21px;
+    text-align: center;
+    color: rgba(75, 75, 75, 1);
+    margin: 0;
+}
+
+.badge {
+  padding: 6px 19px;
+  box-shadow: 9.95px 8.38px 15.71px -3.14px rgba(65, 60, 57, 0.21);
+  margin-top: 17px;
+}
+
+.badge-text {
+  font-family: 'Euclid Circular A', sans-serif;
+  font-weight: 600;
+  font-size: 33.76px;
+  line-height: 1.01;
+}
+
+.cards {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 26px;
+    
+}
+
+.fan-card {
+    position: relative;
+    height: 42vh;
+    height: 42dvh;
+    min-width: 0;
+    background-image: url('../../assets/card-fan.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    box-shadow: 15.63px 13.17px 24.68px -4.94px rgba(65, 60, 57, 0.21);
+}
+
+.styler-card {
+    position: relative;
+    height: 42vh;
+    height: 42dvh;
+    min-width: 0;
+    background-image: url('../../assets/card-styler.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    box-shadow: 15.63px 13.17px 24.68px -4.94px rgba(65, 60, 57, 0.21);
+}
+
+.card-badge {
+    position: absolute;
+    padding: 7px 18px;
+    margin-inline: auto;
+    top: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+}
+
+.card-badge-text {
+    font-weight: 600;
+}
+
+@media (max-width: 1023px) {
+    .container,
+    .slide-card {
+        min-height: 0;
+        justify-content: normal;
+    }
+
+    .slide-card {
+        display: block;
+        max-width: 480px;
+        container-type: inline-size;
+    }
+
+    .background {
+        position: relative;
+        inset: auto;
+        height: auto;
+        aspect-ratio: 320 / 717;
+        object-fit: contain;
+    }
+
+    .content-wrapper {
+        position: absolute;
+        top: 6.56cqi;
+        left: 0;
+        width: 100%;
+    }
+
+    .main-title {
+        padding: 0;
+        font-size: clamp(22px, 7.5cqi, 32px);
+        line-height: 1.1;
+    }
+
+    .badge {
+        margin-top: 5.31cqi;
+        padding: 1.875cqi 5.94cqi;
+    }
+
+    .badge-text {
+        font-size: clamp(30px, 10.55cqi, 44px);
+    }
+
+    .cards {
+        position: absolute;
+        bottom: 8.125cqi;
+        left: 0;
+        gap: 3.125cqi;
+        padding-bottom: 0;
+    }
+
+    .fan-card,
+    .styler-card {
+        height: auto;
+        aspect-ratio: 155 / 307;
+        border-radius: clamp(20px, 7.81cqi, 32px);
+    }
+
+    .card-badge {
+        top: 5.94cqi;
+        padding: 2.1875cqi 5.625cqi;
+    }
+
+    .card-badge-text {
+        font-size: clamp(14px, 5cqi, 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        min-height: 100svh;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 48px 0;
+        background-color: rgba(127, 120, 117, 1);
+    }
+
+    .slide-card {
+        display: block;
+        width: min(65vw, 1200px, calc((100svh - 96px) * 976 / 630));
+        min-height: 0;
+        aspect-ratio: 976 / 630;
+        border-radius: 48px;
+        overflow: hidden;
+        container-type: inline-size;
+        background: #a59f9b;
+    }
+
+    .desktop-lights {
+        display: block;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .desktop-lights > span {
+        position: absolute;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        filter: blur(27cqi);
+    }
+
+    .light-top {
+        width: 37.2%;
+        left: 33%;
+        top: -17.4%;
+        background: #fff;
+        opacity: 0.89;
+    }
+
+    .light-left {
+        width: 37.2%;
+        left: 14.4%;
+        top: 6.5%;
+        background: #f5d4ac;
+        opacity: 0.49;
+    }
+
+    .light-right {
+        width: 34.3%;
+        left: 54.3%;
+        top: 35.8%;
+        background: #ff976a;
+        opacity: 0.5;
+    }
+
+    .background {
+        display: none;
+    }
+
+    .desktop-composition {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: auto;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .content-wrapper {
+        padding-top: 2.58cqi;
+    }
+
+    .main-title {
+        padding-top: 0;
+        font-size: 4cqi;
+        line-height: 1.05;
+    }
+
+    .badge {
+        margin-top: 2.5cqi;
+        padding: 0.65cqi 2.3cqi;
+    }
+
+    .badge-text {
+        font-size: 4.2cqi;
+    }
+
+    .cards {
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        bottom: 6%;
+        width: auto;
+        padding-bottom: 0;
+        grid-template-columns: repeat(2, minmax(0, 21.5%));
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .fan-card,
+    .styler-card {
+        height: auto;
+        aspect-ratio: 192 / 338;
+        border-radius: 2.5cqi;
+    }
+
+    .card-badge {
+        top: auto;
+        bottom: calc(100% + 1.7cqi);
+        padding: 0.8cqi 2.3cqi;
+    }
+
+    .fan-card .card-badge {
+        left: 0;
+        transform: none;
+    }
+
+    .styler-card .card-badge {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+
+    .card-badge-text {
+        font-size: 2.3cqi;
+        line-height: 1.2;
+    }
+}

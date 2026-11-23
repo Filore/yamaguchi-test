@@ -1,0 +1,21 @@
+.badge {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    container-type: inline-size;
+    background: url('../../assets/star-badge.png') center / contain no-repeat;
+    color: #fff;
+}
+
+.text {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10%;
+    font-family: 'Euclid Circular A', sans-serif;
+    font-size: 11cqi;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+}

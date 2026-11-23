@@ -1,0 +1,272 @@
+.container {
+    container-type: inline-size;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+
+    align-items: center;
+    background-color: #746D68;
+}
+
+.badge-text {
+    font-family: 'Euclid Circular A';
+    font-weight: 600;
+    font-size: 18.61px;
+    line-height: 23.89px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #625b56;
+}
+
+.slide-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    container-type: inline-size;
+}
+
+.mobile-feature {
+    width: 100%;
+}
+
+.heading-line {
+    display: contents;
+}
+
+.desktop-space {
+    display: none;
+}
+
+.heading-text {
+  font-family: 'Euclid Circular A';
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.first-line-text {
+    display: block;
+    margin-top: 33px;
+    font-size: 33px;
+    line-height: 1.22;
+}
+
+.comfort,
+.quality {
+  display: block;
+  line-height: 1.09;
+}
+
+.comfort {
+  margin-top: 5px;
+  font-size: 46px; 
+  letter-spacing: 0.02em;
+}
+
+.quality {
+  font-size: 44px;
+}
+
+.third-line-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 23px;
+    line-height: 1.22;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    container-type: inline-size;
+    margin-top: 34px;
+    padding-bottom: calc(38.08cqi + 44px);
+}
+
+.image-content {
+    position: relative;
+}
+
+.image-content picture {
+    display: block;
+}
+
+.image-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+}
+
+.image-label {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    margin: 0;
+    font-family: 'Euclid Circular A';
+    font-weight: 600;
+    font-size: 6.5cqi;
+    line-height: 1.1;
+    color: #4b4b4b;
+}
+
+.star-position {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 56%;
+    transform: translate(-50%, 68%);
+    z-index: 1;
+}
+
+@media (max-width: 1023px) {
+    .container {
+        min-height: 0;
+    }
+
+    .slide-card {
+        max-width: 480px;
+    }
+
+    .badge-text {
+        font-size: clamp(17px, 5.82cqi, 25px);
+        line-height: 1.28;
+    }
+
+    .heading-text {
+        max-width: calc(100% - 8cqi);
+    }
+
+    .first-line-text {
+        margin-top: 10.3125cqi;
+        font-size: clamp(30px, 10.31cqi, 46px);
+    }
+
+    .comfort {
+        margin-top: 1.5625cqi;
+        font-size: clamp(40px, 14.375cqi, 66px);
+    }
+
+    .quality {
+        font-size: clamp(38px, 13.75cqi, 63px);
+    }
+
+    .third-line-text {
+        margin-top: 3.125cqi;
+        font-size: clamp(20px, 7.19cqi, 32px);
+    }
+
+    .img-wrapper {
+        margin-top: 10.625cqi;
+        padding-bottom: 51.83cqi;
+    }
+
+    .image-content img {
+        border-radius: clamp(24px, 8.75cqi, 40px);
+    }
+
+    .image-label {
+        font-size: clamp(20px, 6.5cqi, 28px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        min-height: 100svh;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 48px 0;
+        background-color: rgba(127, 120, 117, 1);
+    }
+
+    .slide-card {
+        display: block;
+        width: min(65vw, 1200px, calc((100svh - 96px) * 976 / 630));
+        aspect-ratio: 976 / 630;
+        border-radius: 48px;
+        overflow: hidden;
+    }
+
+    .mobile-feature {
+        display: none;
+    }
+
+    .heading-text {
+        position: absolute;
+        top: 6.5%;
+        left: 5.5%;
+        right: 5.5%;
+        z-index: 2;
+        color: #4b4b4b;
+        font-size: 3.6cqi;
+        line-height: 1.2;
+        text-align: right;
+    }
+
+    .heading-line {
+        display: block;
+        white-space: nowrap;
+    }
+
+    .first-line-text,
+    .comfort,
+    .quality,
+    .third-line-text {
+        display: inline;
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+    }
+
+    .img-wrapper {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .image-content,
+    .image-content picture {
+        height: 100%;
+    }
+
+    .image-content img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .image-label {
+        top: 22%;
+        left: auto;
+        right: 5.5%;
+        font-size: 2.8cqi;
+        line-height: 1.2;
+        color: #777;
+    }
+
+    .mobile-break {
+        display: none;
+    }
+
+    .desktop-space {
+        display: inline;
+    }
+
+    .star-position {
+        bottom: 5%;
+        left: auto;
+        right: 4%;
+        width: 15%;
+        transform: none;
+    }
+}
